@@ -53,5 +53,5 @@ $ ./console.py
 # This is the list of individuals who have contributed content to the repository.
 ```markdown
 Ayoub Draid <draidayoub3@gmail.com>
-Hajar <Hajar@example.com>
+houikhalfan <h.ouikhalfan@gmail.com>
 ```
