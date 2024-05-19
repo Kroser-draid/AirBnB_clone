@@ -1,11 +1,16 @@
 #!/usr/bin/python3
+"""
+BaseModel module
+Defines a BaseModel class for the AirBnB clone project.
+"""
+
 import uuid
 from datetime import datetime
 
 class BaseModel:
     """
     A base class for all models that defines common attributes and methods.
-    
+
     Attributes:
         id (str): Unique identifier for each instance.
         created_at (datetime): The datetime when the instance is created.
