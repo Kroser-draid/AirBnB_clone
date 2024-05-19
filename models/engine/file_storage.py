@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Create filestorage class to manage data
+"""
 import json
 import os
 from models.base_model import BaseModel
@@ -6,14 +9,14 @@ from models.base_model import BaseModel
 
 class FileStorage:
     """
-
+    class of filestorage that store data in json file and reload it
     """
     __file_path = "file.json"
     __objects = {}
 
     def new(self, obj):
         """
-
+        create new object in storage
         """
         obj_class_name = obj.__class__.__name__
 
@@ -23,13 +26,13 @@ class FileStorage:
 
     def all(self):
         """
-
+        method that returns all objects in storage
         """
         return FileStorage.__objects
 
     def save(self):
         """
-
+        method that saves the storage in the json file
         """
         all_objects = FileStorage.__objects
 
@@ -43,7 +46,7 @@ class FileStorage:
 
     def reload(self):
         """
-
+        method that reload data from json file
         """
         if os.path.isfile(FileStorage.__file_path):
             with open(FileStorage.__file_path, "r", encoding="utf-8") as f:

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-
+console interpreter that takes cmd
 """
 import cmd
 import shlex
@@ -10,14 +10,14 @@ from models import storage
 
 class HBNBCommand(cmd.Cmd):
     """
-
+    class of the hbnb console interpreter
     """
     prompt = "(hbnb) "
     valid_classes = ["BaseModel"]
 
     def do_create(self, arg):
         """
-
+        Method to create new instances
         """
         commands = shlex.split(arg)
 
@@ -32,7 +32,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, arg):
         """
-
+        Method to show instance by id
         """
         commands = shlex.split(arg)
 
@@ -52,7 +52,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, arg):
         """
-
+        Method to destroy instance
         """
         commands = shlex.split(arg)
 
@@ -73,7 +73,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """
-
+        Method to show all instances created
         """
         objects = storage.all()
 
@@ -91,7 +91,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, arg):
         """
-
+        Method to update objects
         """
         commands = shlex.split(arg)
 
@@ -127,25 +127,25 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         """
-
+        if empty line don't do anything
         """
         pass
 
     def do_quit(self, arg):
         """
-
+        Quit command to exit the program
         """
         return True
 
     def help_quit(self):
         """
-
+        doc to help you quit the program
         """
         print("Quit command to exit the program")
 
     def do_EOF(self, line):
         """
-
+        same as quit
         """
         print()
         return True

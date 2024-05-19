@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-
+BaseModel class to inherite other classes from it
 """
 import uuid
 from datetime import datetime
@@ -8,6 +8,9 @@ import models
 
 
 class BaseModel:
+    """
+    base model class
+    """
     def __init__(self, *args, **kwargs):
         time_format = "%Y-%m-%dT%H:%M:%S.%f"
         if kwargs:
@@ -27,14 +30,14 @@ class BaseModel:
 
     def save(self):
         """
-
+        Method to save instance in storage
         """
         self.updated_at = datetime.utcnow()
         models.storage.save()
 
     def to_dict(self):
         """
-
+        Method that returns a dict of the instance
         """
         current_dict = self.__dict__.copy()
         current_dict["__class__"] = self.__class__.__name__
@@ -45,7 +48,7 @@ class BaseModel:
 
     def __str__(self):
         """
-
+        str method customized to return custom format of info
         """
         cls_name = self.__class__.__name__
         return "[{}] ({}) {}".format(cls_name, self.id, self.__dict__)
