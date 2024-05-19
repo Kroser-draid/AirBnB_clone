@@ -2,8 +2,9 @@
 import unittest
 from models import BaseModel
 from datetime import datetime
-import time  # Import time to introduce a delay
+import time
 import uuid
+
 
 class TestBaseModel(unittest.TestCase):
 
@@ -26,7 +27,7 @@ class TestBaseModel(unittest.TestCase):
     def test_save_updates_updated_at(self):
         """Test that save() method updates updated_at"""
         old_updated_at = self.model.updated_at
-        time.sleep(0.1)  # Introduce a small delay to ensure updated_at changes
+        time.sleep(0.1)
         self.model.save()
         print("old_updated_at:", old_updated_at)
         print("new_updated_at:", self.model.updated_at)
@@ -37,9 +38,13 @@ class TestBaseModel(unittest.TestCase):
         """Test to_dict() method"""
         model_dict = self.model.to_dict()
         self.assertEqual(model_dict['id'], self.model.id)
-        self.assertEqual(model_dict['__class__'], self.model.__class__.__name__)
-        self.assertEqual(model_dict['created_at'], self.model.created_at.isoformat())
-        self.assertEqual(model_dict['updated_at'], self.model.updated_at.isoformat())
+        self.assertEqual(model_dict['__class__'],
+                         self.model.__class__.__name__)
+        self.assertEqual(model_dict['created_at'],
+                         self.model.created_at.isoformat())
+        self.assertEqual(model_dict['updated_at'],
+                         self.model.updated_at.isoformat())
+
 
 if __name__ == '__main__':
     unittest.main()
