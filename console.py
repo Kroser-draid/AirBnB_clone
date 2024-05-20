@@ -5,6 +5,7 @@ console interpreter that takes cmd
 import cmd
 import shlex
 from models.base_model import BaseModel
+from models.user import User
 from models import storage
 
 
@@ -13,7 +14,7 @@ class HBNBCommand(cmd.Cmd):
     class of the hbnb console interpreter
     """
     prompt = "(hbnb) "
-    valid_classes = ["BaseModel"]
+    valid_classes = ["BaseModel", "User"]
 
     def do_create(self, arg):
         """
@@ -26,8 +27,8 @@ class HBNBCommand(cmd.Cmd):
         elif commands[0] not in self.valid_classes:
             print("** class doesn't exist **")
         else:
-            new_instance = BaseModel()
-            new_instance.save()
+            new_instance = eval(f"{commands[0]}()")
+            storage.save()
             print(new_instance.id)
 
     def do_show(self, arg):
