@@ -198,6 +198,5 @@ class TestReview_to_dict(unittest.TestCase):
         with self.assertRaises(TypeError):
             review.to_dict(None)
 
-
 if __name__ == "__main__":
     unittest.main()
