@@ -14,7 +14,8 @@ class TestPlace_instantiation(unittest.TestCase):
     """
     Unittests for testing instantiation of the Place class.
     """
-
+    
+    
     def setUp(self):
         try:
             os.rename("file.json", "tmp.json")
