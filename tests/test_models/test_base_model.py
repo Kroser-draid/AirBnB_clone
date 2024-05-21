@@ -6,7 +6,6 @@ import os
 import unittest
 from models.base_model import BaseModel
 
-
 class TestBasemodel(unittest.TestCase):
     """
     Unittest for BaseModel
