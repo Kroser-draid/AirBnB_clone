@@ -51,6 +51,7 @@ def split_curly_braces(e_arg):
             return f"{id}", f"{attr_name} {attr_value}"
 
 
+
 class HBNBCommand(cmd.Cmd):
     """
     HBNBCommand console class definition
