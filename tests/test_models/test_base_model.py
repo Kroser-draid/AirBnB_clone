@@ -81,6 +81,5 @@ class TestBasemodel(unittest.TestCase):
 
         self.assertIn(str(my_model.__dict__), str(my_model))
 
-
 if __name__ == "__main__":
     unittest.main()
