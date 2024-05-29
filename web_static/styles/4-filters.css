@@ -19,3 +19,6 @@
     margin-right: 30px;
 
 }
+button:hover {
+    opacity: 90%;
+}
