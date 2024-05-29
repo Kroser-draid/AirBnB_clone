@@ -5,6 +5,7 @@
     border-radius: 4px;
     display: flex;
     align-items: center;
+    clear: both;
 }
 .locations {
     border-right: 1px solid #DDDDDD;
